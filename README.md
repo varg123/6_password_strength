@@ -1,7 +1,18 @@
-# Password Strength Calculator
+# Калькулятор надежности пароля
 
-[TODO. There will be project description]
+Проверяет надёжность пароля
 
-# Project Goals
+#Пример работы
 
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+Запускаем скрипт, вводим пароль и готово!
+
+```bash
+$ python password_strength.py
+Введите пароль:
+Password:
+Надежность пароля: 4/7
+```
+
+# Цели проекта
+
+Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DEVMAN.org](https://devman.org)

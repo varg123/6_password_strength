@@ -5,16 +5,11 @@ DIVERSE_COUNT = 6
 
 
 def has_digit(password):
-    for char in password:
-        if char.isdigit():
-            return True
-    return False
+    return any([char.isdigit() for char in password])
 
 
 def is_very_long(password):
-    if len(password) >= LONG_LENGTH:
-        return True
-    return False
+    return len(password) >= LONG_LENGTH
 
 
 def is_diverse(password):
@@ -22,36 +17,23 @@ def is_diverse(password):
 
 
 def has_letters(password):
-    for char in password:
-        if not char.isdigit():
-            return True
-    return False
+    return any([char.isalpha() for char in password])
 
 
 def has_upper_letters(password):
-    for char in password:
-        if char.isupper():
-            return True
-    return False
+    return any([char.isupper() for char in password])
 
 
 def has_lower_letters(password):
-    for char in password:
-        if char.islower():
-            return True
-    return False
+    return any([char.islower() for char in password])
 
 
 def has_symbols(password):
-    if not password.isalnum():
-            return True
-    return False
+    return not password.isalnum()
 
 
 def has_not_only_symbols(password):
-    if password.isalnum():
-        return True
-    return False
+    return password.isalnum()
 
 
 def get_password_strength(password):
@@ -66,8 +48,7 @@ def get_password_strength(password):
         has_symbols,
     ]
     for check in checks:
-        if check(password):
-            strength += 1
+        strength += check(password)
     return strength, len(checks)
 
 
